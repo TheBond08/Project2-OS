@@ -3,4 +3,4 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-int copy_files(int argc, char **argv);
+int copy_files();
