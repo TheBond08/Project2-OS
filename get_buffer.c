@@ -4,7 +4,7 @@
 #include "get_buffer.h"
 
 
-int get_buffer(int argc, char *argv[], int *src, int *dst, int *size){
+int get_buffer(int argc, char *argv[], char **src, char **dst, int *size){
     
     if(argc == 4 && strncmp(argv[1], "-b", 2) == 0 ){
         *size = atoi(argv[1] + 2);

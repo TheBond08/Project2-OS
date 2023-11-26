@@ -1,1 +1,5 @@
-int get_buffer(int argc, char *argv[], int *src, int *dst, int *size);
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int get_buffer(int argc, char *argv[], char **src, char **dst, int *size);
