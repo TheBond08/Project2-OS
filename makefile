@@ -1,14 +1,22 @@
-mycp: mycp.o copy_files.o make_report.o
-	gcc mycp.o copy_files.o make_report.o -o mycp
+cc = gcc
+CFLAGS = -Wall -Wextra
 
-mycp.o: mycp.c copy_files.h make_report.h
-	gcc -c -Wall mycp.c
+ALL = mycp.c copy_files.c get_buffer.c make_report.c
 
-copy_files.o: copy_files.c copy_files.h
-	gcc -c -Wall copy_files.c
+OBJ = $(ALL:.c=.o)
 
-make_report.o: make_report.c copy_files.h
-	gcc -c -Wall make_report.c
+TARGET = mycp
+
+.PHONY: all clean
+
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) $^ -o $@
+
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o mycp
+	rm -f $(OBJ) $(TARGET)
