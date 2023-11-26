@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "get_buffer.h"
 
 
 int get_buffer(int argc, char *argv[], int *src, int *dst, int *size){
