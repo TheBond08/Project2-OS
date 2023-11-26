@@ -21,18 +21,18 @@ int main (int argc, char* argv[]){
 
 
     if(argc <=1){
-        perror("Usage:mycp -b[number] source_file destination_file\n");
+        printf("Usage:mycp -b[number] source_file destination_file\n");
         exit (1);
     }
 
     if(argc > 2){
     // Opening files
         if((sf = fopen(src, "rb")) == NULL){
-            perror("Error opening source file\n");
+            printf("Error opening source file\n");
             exit(2);
         }   
         if((df = fopen(dest, "wb")) == NULL){
-            perror("Error opening destination file\n");
+            prinf("Error opening destination file\n");
             exit(2);
         };
     }
